@@ -1,0 +1,64 @@
+---
+title: "Exercises Class 1"
+author: "Tim Nieuwenhuis"
+date: "11/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\#Exercises 1
+
+## 1. Power, square toots, logs
+
+```{r}
+#Single number
+x = 4
+##Power
+x**2
+x^2
+## Square root
+sqrt(x)
+## Log and natural Log
+log10(x)
+log(x)
+
+
+## Generate a random vector
+x=c(1,2.4,-5)
+
+
+## See how it works vectorized
+##Power
+x**2
+x^2
+## Square root
+sqrt(x)
+## Log and natural Log
+log10(x)
+log(x)
+
+```
+
+## 2. What happens when you apply arithmetic operations to logical values (e.g., TRUE + TRUE, or TRUE+ FALSE) What can you conclude about how logical values are stored in R?
+
+```{r}
+TRUE + TRUE
+TRUE + FALSE
+## TRUE is coded as 1 and FALSE is coded as 0
+```
+
+## 3. What happens when you compare a numeric value to a string (e.g., "a" \> 1) What is happening to the numeric variable in this comparison?}
+
+```{r}
+"a" > 1
+"a" > 100
+"a" > Inf
+
+```
+
+Seems to be treated higher than all numerics except infinity

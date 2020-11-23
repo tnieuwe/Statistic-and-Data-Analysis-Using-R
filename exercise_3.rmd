@@ -1,0 +1,62 @@
+---
+title: "Exercise 3"
+author: "Tim Nieuwenhuis"
+date: "11/13/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(datasets)
+
+```
+
+```{r}
+data("iris")
+str(iris)
+```
+
+Use table to get a count of each species
+```{r}
+table(iris$Species)
+```
+
+What speciees in in the 75th row
+```{r}
+iris$Species[75]
+```
+
+
+
+3. Select the first 75 rows of the data.frame (keep all thecolumns) and save the result as iris75. Make a table of theSpeciescolumn for iris75.
+
+```{r}
+iris75 <- iris[1:75,]
+table(iris75$Species)
+
+```
+
+
+4. Go back to the full, original data, and use an appropriatecondition in the square brackets to select rows of theversicolorspecies. Save the result as irisVC5. Calculate the mean petal length in irisVC
+
+```{r}
+irisVC <- iris[51:100,]
+mean(irisVC$Petal.Length)
+
+```
+
+
+4 Go back to the full dataset and use appropriate conditions inthe square brackets to select rows of species versicolor that also have Petal.Length <=4. Save the result as irisVC4. Calculatethe mean petal width.
+
+
+```{r}
+irisVC4 <- iris[iris$Species == "versicolor" & iris$Petal.Length <= 4,]
+mean(irisVC4$Petal.Width)
+```
+7. When you new to R, it is often easier to save the subsettedversion of the data and work directly on it. But it can also beconfusing to have a bunch of different versions of the datafloating around. Go back to the originalirisdata, find allversicolorspecimens with petal length <= 4, and calculate themean petal width, all in one line of code, without saving anyintermediate results.
+
+```{r}
+mean(iris[iris$Species == "versicolor" & iris$Petal.Length <= 4,"Petal.Width"])
+```
+
+
